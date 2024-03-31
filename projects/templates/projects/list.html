@@ -1,0 +1,15 @@
+{% load i18n %}
+{% block content %}
+<h3>
+    {% trans "My Projects" %}
+</h3>
+<ul>
+    {% for Project in object_list %}
+        <li>{{Project.title}}</li>
+        {% empty %}
+        <li>{% trans "There are no projects to show" %}</li>
+
+
+    {% endfor %}
+</ul>
+{% endblock content %}
