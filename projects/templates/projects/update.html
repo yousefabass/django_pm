@@ -1,0 +1,10 @@
+{% load i18n %}
+{% block content %}
+    <form method="get">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="Submit">
+    </form>
+    <a href="{% url 'project_delete' object.id %}">Delete</a>
+    {% include "projects/task.html" with project=object %}
+{% endblock content %}

@@ -4,12 +4,10 @@
     {% trans "My Projects" %}
 </h3>
 <ul>
-    {% for Project in object_list %}
-        <li>{{Project.title}}</li>
+    {% for project in object_list %}
+        <li>{{ project.title }} <a href="{% url 'project_update' project.id %}">edit</a></li>
         {% empty %}
         <li>{% trans "There are no projects to show" %}</li>
-
-
     {% endfor %}
 </ul>
 {% endblock content %}
